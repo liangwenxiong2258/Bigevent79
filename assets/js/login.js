@@ -62,6 +62,7 @@ $(function () {
                 }
                 localStorage.setItem("token", res.data.token);
                 layer.msg("登录成功，即将跳转去首页！", function () {
+                    location.href = "/home/index.html";
                 });
             });
     });
