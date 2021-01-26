@@ -1,9 +1,9 @@
 //====================发送ajax数据请求来获取用户信息======================
 function getUserInfo() {
     axios.get("/my/userinfo", {
-        headers: {
+        /* headers: {
             Authorization: localStorage.getItem("token"),    //身份认证
-        },
+        }, */
     })
         .then((res) => {
             // console.log(res);
@@ -28,6 +28,7 @@ function avatarAndName(res) {
 
     } else {
         //没有自己头像时
+        $('.layui-nav-img').hide();
         let first = name[0].toUpperCase()
         $(".text_avatar").text(first).show()
     }
@@ -49,6 +50,9 @@ $("#logoutBtn").click(function () {
 
         layer.close(index);
     });
+
+
+
 
 
 })

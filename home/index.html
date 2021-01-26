@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>layout 后台大布局 - Layui</title>
+    <script>
+        if (!localStorage.getItem("token")) {
+            location.href = "/home/login.html"
+        }
+    </script>
     <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
     <link rel="stylesheet" href="/assets/fonts/iconfont.css">
 
@@ -24,16 +29,19 @@
                         <img src="http://t.cn/RCzsdCq" class="layui-nav-img"><span class="text_avatar">D</span>个人中心</a>
                     <dl class="layui-nav-child">
                         <dd><a href="">基本资料</a></dd>
-                        <dd><a href="">安全设置</a></dd>
+                        <dd><a href="">更换头像</a></dd>
                         <dd><a href="">重置密码</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="" class="iconfont icon-tuichu">退了</a></li>
+                <li class="layui-nav-item"><a href="Javascript:;" id="logoutBtn"><span
+                            class="iconfont icon-tuichu"></span>退出</a>
+                </li>
             </ul>
         </div>
 
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
+                <!-- 头像和昵称区域 -->
                 <div class="userinfo">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
 
@@ -60,9 +68,12 @@
                     <li class="layui-nav-item">
                         <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 基本资料</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 更换头像</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 重置密码</a></dd>
+                            <dd><a href="javascript:;" target="box"><i class="layui-icon layui-icon-app"></i> 基本资料</a>
+                            </dd>
+                            <dd><a href="javascript:;" target="box"><i class="layui-icon layui-icon-app"></i> 更换头像</a>
+                            </dd>
+                            <dd><a href="javascript:;" target="box"><i class="layui-icon layui-icon-app"></i> 重置密码</a>
+                            </dd>
                         </dl>
                     </li>
                 </ul>
